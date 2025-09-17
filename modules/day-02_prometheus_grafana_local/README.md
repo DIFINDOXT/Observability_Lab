@@ -18,10 +18,10 @@
 ![Grafana UI](./screenshots/02_grafana_ui.png)
 
 ### 3. Error Encounter (for learning)
-![Docker Compose Error](./screenshots/04_docker_compose_error.png)
+![Docker Compose Error](./screenshots/03_docker_compose_error.png)
 
 ### 3. Docker Compose Startup
-![Docker Compose Up](./screenshots/03_docker_compose_up.png)
+![Docker Compose Up](./screenshots/04_docker_compose_up.png)
 
 ### 5. Prometheus Targets (Scraping UP)
 ![Prometheus Targets](./screenshots/05_prometheus_targets.png)

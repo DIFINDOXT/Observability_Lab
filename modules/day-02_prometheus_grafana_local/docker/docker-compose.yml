@@ -25,6 +25,13 @@ services:
     depends_on:
       - prometheus
 
+  node-exporter:
+    image: quay.io/prometheus/node-exporter:v1.8.2
+    container_name: node-exporter-local
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
 volumes:
   prom_data:
   grafana_data:

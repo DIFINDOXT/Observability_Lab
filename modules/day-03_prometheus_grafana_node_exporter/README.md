@@ -57,7 +57,7 @@ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 ```
 
 - - **📸 Screenshot:**  
-  ![Containers Running](../screenshots/containers_running.png)
+  ![Containers Running](./screenshots/containers_running.png)
 
 
 ## 🔍 Step 2: Verifying Prometheus Targets
@@ -66,7 +66,7 @@ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 - Both prometheus and node targets should show UP
 
 - - **📸 Screenshot:**
-  ![Prometheus Target Up](../screenshots/prometheus_targets.png)
+  ![Prometheus Target Up](./screenshots/prometheus_targets.png)
 
 
 ## 🧾 Step 3: Raw Metrics from Node Exporter
@@ -76,7 +76,7 @@ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 docker exec -it node-exporter-local wget -qO- http://localhost:9100/metrics | head -20
 ```
 - - **📸 Screenshot:**
-  ![Node Exporter Metrics](../screenshots/node_exporter_metrics.png)
+  ![Node Exporter Metrics](./screenshots/node_exporter_metrics.png)
 
 
 ## 📈 Step 4: Running PromQL Queries
@@ -86,27 +86,27 @@ docker exec -it node-exporter-local wget -qO- http://localhost:9100/metrics | he
 ##### 1. CPU Usage (rate of CPU seconds):
 	- rate(node_cpu_seconds_total[5m])
 - - **📸 Screenshot:**
-  ![CPU RATE](../screenshots/promql_cpu_rate.png)
+  ![CPU RATE](./screenshots/promql_cpu_rate.png)
 
 ##### 2. Memory Available:
 	- node_memory_MemAvailable_bytes
 - - **📸 Screenshot:**
-  ![MEMORY](../screenshots/promql_memory.png)
+  ![MEMORY](./screenshots/promql_memory.png)
 
 ##### 3. All Node Exporter Metrics:
 	- {job="node"}
 - - **📸 Screenshot:**
-  ![NODE EXPORTER METRICES](../screenshots/promql_all_node.png)
+  ![NODE EXPORTER METRICES](./screenshots/promql_all_node.png)
 
 ##### 4. Network Receive Bytes Rate:
 	- rate(node_network_receive_bytes_total[5m])
 - - **📸 Screenshot:**
-  ![NETWORK RECEIVE RATE](../screenshots/promql_network_rate.png)
+  ![NETWORK RECEIVE RATE](./screenshots/promql_network_rate.png)
 
 ##### 5. Average Network Bytes Rate:
 	- avg(rate(node_network_receive_bytes_total[5m]))
 - - **📸 Screenshot:**
-  ![AVERAGE NETWORK RECEIVE RATE](../screenshots/promql_network_avg.png)
+  ![AVERAGE NETWORK RECEIVE RATE](./screenshots/promql_network_avg.png)
 
 
 ## 🎨 Step 5: Grafana Integration
@@ -131,9 +131,9 @@ docker exec -it node-exporter-local wget -qO- http://localhost:9100/metrics | he
 - Use Dashboard ID: 1860
 - Select Prometheus datasource → Import
 - - **📸 Screenshot:**
-  ![NODE EXPORTER DASHBOARD - I ](../screenshots/grafana_node_exporter_dashboard1.png)
+  ![NODE EXPORTER DASHBOARD - I ](./screenshots/grafana_node_exporter_dashboard1.png)
 - - **📸 Screenshot:**
-  ![NODE EXPORTER DASHBOARD - II ](../screenshots/grafana_node_exporter_dashboard2.png)
+  ![NODE EXPORTER DASHBOARD - II ](./screenshots/grafana_node_exporter_dashboard2.png)
 
 ###### 4. Build Custom Panels
 
@@ -141,16 +141,16 @@ docker exec -it node-exporter-local wget -qO- http://localhost:9100/metrics | he
 - Time Series:
 	- avg(rate(node_cpu_seconds_total[5m]))
 - - **📸 Screenshot:**
-  ![AVERAGE CPU RATE in Time Series format](../screenshots/grafana_panel_timeseries.png)
+  ![AVERAGE CPU RATE in Time Series format](./screenshots/grafana_panel_timeseries.png)
 - Histogram:
 - - **📸 Screenshot:**
-  ![AVERAGE CPU RATE in Histogram format](../screenshots/grafana_panel_histogram.png)
+  ![AVERAGE CPU RATE in Histogram format](./screenshots/grafana_panel_histogram.png)
 - Stat:
 - - **📸 Screenshot:**
-  ![AVERAGE CPU RATE in Stat format](../screenshots/grafana_panel_stat.png)
+  ![AVERAGE CPU RATE in Stat format](./screenshots/grafana_panel_stat.png)
 - Table:
 - - **📸 Screenshot:**
-  ![AVERAGE CPU RATE in Table format](../screenshots/grafana_panel_table.png)
+  ![AVERAGE CPU RATE in Table format](./screenshots/grafana_panel_table.png)
 
 ---
 
